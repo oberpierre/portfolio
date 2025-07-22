@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oberpierre/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oberpierre/portfolio/issues"
+  },
+  "devDependencies": {
+    "blowfish-tools": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
