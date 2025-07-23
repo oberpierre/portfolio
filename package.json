@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "build": "rimraf public && hugo --gc --minify",
+    "format": "prettier --ignore-unknown --write .",
+    "format:check": "prettier --ignore-unknown --check .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,6 +16,7 @@
   },
   "devDependencies": {
     "blowfish-tools": "^1.10.0",
+    "prettier": "^3.6.2",
     "rimraf": "^6.0.1"
   },
   "engines": {
