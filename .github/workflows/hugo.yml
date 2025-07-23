@@ -36,8 +36,7 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-        run: |
-          hugo --minify
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

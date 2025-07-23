@@ -2,6 +2,7 @@
   "name": "portfolio",
   "private": true,
   "scripts": {
+    "build": "rimraf public && hugo --gc --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,7 +13,8 @@
     "url": "https://github.com/oberpierre/portfolio/issues"
   },
   "devDependencies": {
-    "blowfish-tools": "^1.10.0"
+    "blowfish-tools": "^1.10.0",
+    "rimraf": "^6.0.1"
   },
   "engines": {
     "node": ">=22.0.0"
