@@ -44,4 +44,3 @@ jobs:
           path: ./public
           if-no-files-found: error
           overwrite: true
-

@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build": "rimraf public && hugo --gc --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --ignore-unknown --write .",
+    "format:check": "prettier --ignore-unknown --check .",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -14,6 +16,9 @@
   },
   "devDependencies": {
     "blowfish-tools": "^1.10.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
     "rimraf": "^6.0.1"
   },
   "engines": {
