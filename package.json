@@ -5,7 +5,6 @@
     "build": "rimraf public && hugo --gc --minify",
     "format": "prettier --ignore-unknown --write .",
     "format:check": "prettier --ignore-unknown --check .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky"
   },
   "repository": {
