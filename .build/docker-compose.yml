@@ -1,0 +1,10 @@
+name: portfolio
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: .build/Dockerfile
+    image: "${IMAGE_NAME:-portfolio}:${IMAGE_TAG:-latest}"
+    ports:
+      - "${PORT:-8080}:80"
