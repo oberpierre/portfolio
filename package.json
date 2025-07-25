@@ -3,6 +3,9 @@
   "private": true,
   "scripts": {
     "build": "rimraf public && hugo --gc --minify",
+    "build:docker": "docker compose -f .build/docker-compose.yml build",
+    "dev": "rimraf public && hugo --watch",
+    "dev:docker": "docker compose -f .build/docker-compose.yml up --watch",
     "format": "prettier --ignore-unknown --write .",
     "format:check": "prettier --ignore-unknown --check .",
     "prepare": "husky"
