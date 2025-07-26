@@ -67,3 +67,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Create GH release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ./public/**/*
