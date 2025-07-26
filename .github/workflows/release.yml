@@ -76,4 +76,5 @@ jobs:
       - name: Create GH release
         uses: softprops/action-gh-release@v2
         with:
+          name: Portfolio ${{ github.ref_name }}
           files: site-${{ github.ref_name }}.tar.gz
