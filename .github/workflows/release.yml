@@ -30,6 +30,11 @@ jobs:
           name: site-${{ github.ref_name }}
           path: ./public
 
+      - name: Archive site for release
+        run: |
+          cd ./public
+          tar -czf ../site-${{ github.ref_name }}.tar.gz .
+
       # Set up Docker Buildx
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -71,4 +76,4 @@ jobs:
       - name: Create GH release
         uses: softprops/action-gh-release@v2
         with:
-          files: ./public/**/*
+          files: site-${{ github.ref_name }}.tar.gz
