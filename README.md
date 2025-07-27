@@ -54,6 +54,8 @@ This setup provides a production-like environment for the development workflow:
 - Docker Compose (`npm run dev:docker`) serves the site through nginx at `http://localhost:$PORT` (configurable via `.build/.env`)
 - The container automatically syncs changes from the `public/` directory, providing a production-like environment with proper error pages, redirects, and live changes from development.
 
+> ⚠️ **Note**: There is a limitation with Hugo's watch mode and Docker Compose's develop attributes where stale files (deleted or renamed files) are not automatically removed. These pages will still be served until manually cleaned from the `public/` directory (or by restarting `npm run dev` which clears the `public/` directory) and the container is restarted.
+
 ### Code Formatting
 
 This project uses [Prettier](https://prettier.io/) for code formatting to maintain consistent code style across all files.
