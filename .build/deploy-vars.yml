@@ -1,0 +1,7 @@
+app_name: nginx-hello-test
+app_namespace: test
+app_folder: apps/nginx-hello-test/
+app_domains:
+  - test4894.oberpierre.com
+container_image: nginxdemos/nginx-hello:latest
+container_port: 8080
