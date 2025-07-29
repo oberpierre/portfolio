@@ -80,7 +80,7 @@ jobs:
           files: site-${{ github.ref_name }}.tar.gz
 
   deploy:
-    # runs-on: ubuntu-latest
+    needs: release
     uses: oberpierre/tools/.github/workflows/deploy-to-k8s.yml@feature/container-deployment
     with:
       ansible_inventory_content: ${{ vars.ANSIBLE_INVENTORY }}
