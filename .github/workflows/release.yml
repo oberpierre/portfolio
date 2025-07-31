@@ -83,5 +83,8 @@ jobs:
     needs: release
     uses: oberpierre/tools/.github/workflows/deploy-to-k8s.yml@feature/container-deployment
     with:
-      ansible_inventory_content: ${{ vars.ANSIBLE_INVENTORY }}
       ansible_var_file: .build/deploy-vars.yml
+    secrets:
+      ansible_inventory_content: ${{ secrets.ANSIBLE_INVENTORY }}
+      ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+      ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
