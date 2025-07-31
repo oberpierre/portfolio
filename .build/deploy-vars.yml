@@ -1,7 +1,11 @@
-app_name: nginx-hello-test
+app_name: portfolio-www-test
 app_namespace: test
-app_folder: apps/nginx-hello-test/
+app_folder: apps/portfolio-www-test/
 app_domains:
-  - test4894.oberpierre.com
-container_image: nginxdemos/nginx-hello:latest
+  - test4849.oberpierre.com
+container_image: ghcr.io/oberpierre/portfolio:latest
 container_port: 8080
+registry:
+  host: ghcr.io
+  username: oberpierre
+  password: "{{ lookup('ansible.builtin.env', 'REGISTRY_PASSWORD') }}"

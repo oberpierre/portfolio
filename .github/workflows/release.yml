@@ -86,5 +86,6 @@ jobs:
       ansible_var_file: .build/deploy-vars.yml
     secrets:
       ansible_inventory_content: ${{ secrets.ANSIBLE_INVENTORY }}
+      registry_password: ${{ secrets.GITHUB_TOKEN }}
       ssh_known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
       ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
