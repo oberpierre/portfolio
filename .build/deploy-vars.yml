@@ -4,7 +4,7 @@ app_folder: apps/portfolio-www-test/
 app_domains:
   - test4849.oberpierre.com
 container_image: ghcr.io/oberpierre/portfolio:latest
-container_port: 8080
+container_port: 80
 registry:
   host: ghcr.io
   username: oberpierre
