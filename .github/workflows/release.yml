@@ -57,8 +57,6 @@ jobs:
             latest=auto
           tags: |
             type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
 
       # Build and push Docker image
       - name: Build and push Docker image
