@@ -81,7 +81,7 @@ jobs:
 
       - name: Set container image output
         id: deploy_output
-        run: echo "container_image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags[0] }}" >> $GITHUB_OUTPUT
+        run: echo "container_image=${{ fromJSON(steps.meta.outputs.json).tags[0] }}" >> $GITHUB_OUTPUT
 
   deploy:
     needs: release
