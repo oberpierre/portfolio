@@ -19,6 +19,8 @@ jobs:
     permissions:
       contents: write # Allow writing to repository contents for release creation
       packages: write
+    outputs:
+      container_image: ${{ steps.deploy_output.outputs.container_image }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -77,11 +79,16 @@ jobs:
           name: Portfolio ${{ github.ref_name }}
           files: site-${{ github.ref_name }}.tar.gz
 
+      - name: Set container image output
+        id: deploy_output
+        run: echo "container_image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.tags[0] }}" >> $GITHUB_OUTPUT
+
   deploy:
     needs: release
     uses: oberpierre/tools/.github/workflows/deploy-to-k8s.yml@feature/container-deployment
     with:
       ansible_var_file: .build/deploy-vars.yml
+      container_image: ${{ needs.release.outputs.container_image }}
     secrets:
       ansible_inventory_content: ${{ secrets.ANSIBLE_INVENTORY }}
       registry_password: ${{ secrets.GITHUB_TOKEN }}
