@@ -85,7 +85,7 @@ jobs:
 
   deploy:
     needs: release
-    uses: oberpierre/tools/.github/workflows/deploy-to-k8s.yml@feature/container-deployment
+    uses: oberpierre/tools/.github/workflows/deploy-to-k8s.yml@v1
     with:
       ansible_var_file: .build/deploy-vars.yml
       container_image: ${{ needs.release.outputs.container_image }}
