@@ -1,0 +1,7 @@
+{{ $dataDomain := replaceRE `^https?://` "" site.BaseURL 1 }} {{ $dataDomain :=
+replaceRE "/$" "" $dataDomain 1 }}
+<script
+  defer
+  data-domain="{{ $dataDomain }}"
+  src="{{ site.Params.plausibleAnalytics.domain }}/js/script.js"
+></script>

@@ -154,6 +154,9 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   # token = "XXXXXX"
   # enableTrackEvent = true
 
+[plausibleAnalytics]
+  domain = "https://analytics.oberpierre.com"
+
 [buymeacoffee]
   # identifier = ""
   # globalWidget = true
