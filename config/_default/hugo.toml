@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://oberpierre.com/"
+baseURL = "https://preview.oberpierre.com/"
 languageCode = "en"
 defaultContentLanguage = "en"
 
