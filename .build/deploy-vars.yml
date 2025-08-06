@@ -1,8 +1,8 @@
-app_name: portfolio-www-test
+app_name: portfolio-www
 app_namespace: test
-app_folder: apps/portfolio-www-test/
+app_folder: apps/portfolio-www/
 app_domains:
-  - test4849.oberpierre.com
+  - preview.oberpierre.com
 container_image: "{{ lookup('ansible.builtin.env', 'CONTAINER_IMAGE') }}"
 container_port: 80
 registry:
