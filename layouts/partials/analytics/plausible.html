@@ -1,7 +1,10 @@
 {{ $dataDomain := replaceRE `^https?://` "" site.BaseURL 1 }} {{ $dataDomain :=
-replaceRE "/$" "" $dataDomain 1 }}
+replaceRE "/$" "" $dataDomain 1 }} {{ $script := slice "script" }} {{ if
+site.Params.plausibleAnalytics.enableLocalhost }} {{ $script = $script | append
+"local" }} {{ end }} {{ $script = $script | append "js" }} {{ $script = delimit
+$script "." }}
 <script
   defer
   data-domain="{{ $dataDomain }}"
-  src="{{ site.Params.plausibleAnalytics.domain }}/js/script.js"
+  src="{{ site.Params.plausibleAnalytics.domain }}/js/{{ $script }}"
 ></script>
