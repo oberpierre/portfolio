@@ -30,7 +30,7 @@ jobs:
         run: sudo snap install dart-sass
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: recursive
 
@@ -44,7 +44,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           # For tags site-{tag} otherwise just site
           name: ${{ github.ref_type == 'tag' && format('site-{0}', github.ref_name) || 'site' }}

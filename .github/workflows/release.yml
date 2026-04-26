@@ -23,11 +23,11 @@ jobs:
       container_image: ${{ steps.deploy_output.outputs.container_image }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Download the artifact built by hugo.yml workflow
       - name: Download site artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: site-${{ github.ref_name }}
           path: ./public
@@ -39,11 +39,11 @@ jobs:
 
       # Set up Docker Buildx
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       # Log in to GitHub Container Registry
       - name: Log in to Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
@@ -52,7 +52,7 @@ jobs:
       # Extract metadata for Docker image
       - name: Extract metadata
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           flavor: |
@@ -62,7 +62,7 @@ jobs:
 
       # Build and push Docker image
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: .build/Dockerfile
@@ -74,7 +74,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Create GH release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           name: Portfolio ${{ github.ref_name }}
           files: site-${{ github.ref_name }}.tar.gz
